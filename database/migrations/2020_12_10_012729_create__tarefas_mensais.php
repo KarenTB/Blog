@@ -15,8 +15,13 @@ class CreateTarefasMensais extends Migration
     {
         Schema::create('_tarefas_mensais', function (Blueprint $table) {
             $table->id();
-            $table -> string ( 'justificativa' );
-            $table -->date('data');
+            $table->string('justificativa')->nullable();
+            $table ->date('data');
+            $table->boolean('luminarias')->nullable()->default(0);
+            $table->boolean('estofados')->nullable()->default(0);
+            $table->boolean('placas')->nullable()->default(0);
+            $table->boolean('pisos')->nullable()->default(0);
+            $table->boolean('superficies')->nullable()->default(0);
             $table->timestamps();
         });
     }

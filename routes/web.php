@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\TarefasMensaisController;
 use App\Http\Controllers\TarefasQuinzenaisController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,32 +17,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-  return view('home');    
+    return view('home');
 });
-  
-Auth::routes();
-
-Route::get('/TarefasDiarias', function () {
-  return view('TarefasDiarias');
-});
-
-Route::get('/TarefasQuinzenais', function () {
-  return view('layouts.TarefasQuinzenais');
-});
-
-Route::get('/TarefasMensais', function () {
-  return view('TarefasMensais');
-});
-
-Route::get('/TarefasSemanais', function () {
-  return view('layouts.TarefasSemanais');
-});
-
-Route::get('/Sobre', function () {
-  return view('layouts.Sobre');
-});
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/create_tarefas_quinzenais', [TarefasQuinzenaisController::class, 'store'])->name('create_quinzenais');
+Auth::routes();
+
+//utilizzo o Route::middleware para colocar as rotas que não podem ser acessar sem login
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/TarefasDiarias', function () {
+        return view('tarefas.TarefasDiarias');
+    });
+
+    Route::get('/TarefasQuinzenais', function () {
+        return view('tarefas.TarefasQuinzenais');
+    });
+
+    Route::get('/TarefasMensais', function () {
+        return view('tarefas.TarefasMensais');
+    });
+
+    Route::get('/TarefasSemanais', function () {
+        return view('tarefas.TarefasSemanais');
+    });
+
+    Route::get('/Sobre', function () {
+        return view('layouts.Sobre');
+    });
+
+    //Rotas de cadastros das informações
+    Route::post('/create_tarefas_quinzenais', [TarefasQuinzenaisController::class, 'store'])->name('create_quinzenais');
+    Route::post('/create_tarefas_mensais', [TarefasMensaisController::class, 'store'])->name('create_mensais');
+
+
+});

@@ -23,7 +23,7 @@
 
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">SISGMETAS </a>
+        <a class="navbar-brand" href="{{ url('home') }}">SISGMETAS </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,7 +60,8 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('TarefasSemanais') }}">Semanais</a>
                                 <a class="dropdown-item" href="{{ url('TarefasQuinzenais') }}">Quinzenais</a>
-                                <a class="dropdown-item" href="{{ url('TarefasMensaisController') }}">Mensais</a>
+                                <a class="dropdown-item" href="{{ url('TarefasMensais') }}">Mensais</a>
+                                <a class="dropdown-item" href="{{ url('TarefasDiarias') }}">Diarias</a>
                             </div>
                         </li>
                     </ul>

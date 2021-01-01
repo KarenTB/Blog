@@ -15,9 +15,19 @@ class CreateTarefasDiarias extends Migration
     {
         Schema::create('_tarefas_diarias', function (Blueprint $table) {
             $table->id();
-            $table -> string ( 'justificativa' );
-            $table -->date('data');
+            $table-> string ( 'justificativa' );
+            $table->date('data');
+            $table->boolean('aspirador')->nullable()->default(0);
+            $table->boolean('vasos')->nullable()->default(0);
+            $table->boolean('limpar guinches')->nullable()->default(0);
+            $table->boolean('lixo')->nullable()->default(0);
+            $table->boolean('terminais')->nullable()->default(0);
+            $table->boolean('ambiente organizado')->nullable()->default(0);
+            $table->boolean('varrer')->nullable()->default(0);
+            $table->boolean('lavar lixeiras')->nullable()->default(0);
+            $table->boolean('lavar pias')->nullable()->default(0);
             $table->timestamps();
+
         });
     }
 

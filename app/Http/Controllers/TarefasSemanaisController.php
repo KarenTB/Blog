@@ -3,23 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TarefasQuinzenais;
+use App\Models\TarefasSemanais;
 use Illuminate\Support\Facades\DB;
 
-class TarefasQuinzenaisController extends Controller
+class TarefasSemanaisController extends Controller
 {
     public function store(Request $request) 
     {
-        $tarefas = new TarefasQuinzenais();
+        $tarefas = new TarefasSemanais();
         $data = $request->all();
         $data['data'] = DB::raw("CURDATE()");
 
         $tarefas->create($data);
-
+        
         //Verificando se existe tarefa não mascadas
-        if ((empty($data['combate_dengue']) || empty($data['limpar_vidros'])
-                || empty($data['conservar_persianas']) || empty($data['lavar_escadas'])
-                || empty($data['revisao']) || empty($data['capachos']) && empty($data['justificativa'])))
+        if ((empty($data['lavar']) || empty($data['limpar_poeira']) || empty($data['jardinagem']) 
+                || empty($data['limpar_tapetes']) || empty($data['moveis'])) && empty($data['justificativa']))
             return back()->with('error','Você deixou tarefas sem marcar, adicione a justificativa.');
 
         //Verificando se foi realmente salvo, e disparando através do back()

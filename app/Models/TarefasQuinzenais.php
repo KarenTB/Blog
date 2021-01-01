@@ -11,6 +11,7 @@ class TarefasQuinzenais extends Model
     protected $table = "_tarefas_quinzenais";
 
     protected $fillable = [
-        'data', 'justificativa'
+        'data', 'justificativa','combate_a_dengue','limpeza_dos_vidros','conservar_persianas',
+        'lavar_as_escadas','revisao', 'capachos'
     ];
 }

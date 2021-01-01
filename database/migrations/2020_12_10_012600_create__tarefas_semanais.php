@@ -15,8 +15,13 @@ class CreateTarefasSemanais extends Migration
     {
         Schema::create('_tarefas_semanais', function (Blueprint $table) {
             $table->id();
-            $table -> string ( 'justificativa' );
-            $table -->date('data');
+            $table->string('justificativa');
+            $table->date('data');
+            $table->boolean('lavar')->nullable();
+            $table->boolean('limpar_poeira')->nullable();
+            $table->boolean('jardinagem')->nullable();
+            $table->boolean('limpar_tapetes')->nullable();
+            $table->boolean('moveis')->nullable();
             $table->timestamps();
         });
     }

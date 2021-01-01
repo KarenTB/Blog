@@ -17,11 +17,11 @@ class CreateTarefasMensais extends Migration
             $table->id();
             $table->string('justificativa')->nullable();
             $table ->date('data');
-            $table->boolean('luminarias')->nullable()->default(0);
-            $table->boolean('estofados')->nullable()->default(0);
-            $table->boolean('placas')->nullable()->default(0);
-            $table->boolean('pisos')->nullable()->default(0);
-            $table->boolean('superficies')->nullable()->default(0);
+            $table->boolean('luminarias')->nullable();
+            $table->boolean('estofados')->nullable();
+            $table->boolean('placas')->nullable();
+            $table->boolean('pisos')->nullable();
+            $table->boolean('superficies')->nullable();
             $table->timestamps();
         });
     }

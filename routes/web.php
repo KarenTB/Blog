@@ -43,13 +43,20 @@ Route::middleware(['auth'])->group(function () {
         return view('tarefas.TarefasSemanais');
     });
 
+    Route::get('/relatorio', function () {
+        return view('tarefas.relatorio');
+    });
+
     Route::get('/Sobre', function () {
         return view('layouts.Sobre');
     });
 
+
     //Rotas de cadastros das informações
     Route::post('/create_tarefas_quinzenais', [TarefasQuinzenaisController::class, 'store'])->name('create_quinzenais');
     Route::post('/create_tarefas_mensais', [TarefasMensaisController::class, 'store'])->name('create_mensais');
+    Route::post('/create_tarefas_diarias', [TarefasDiariasController::class, 'store'])->name('create_diarias');
+    Route::post('/create_tarefas_semanais', [TarefasSemanaisController::class, 'store'])->name('create_semanais');
 
 
 });

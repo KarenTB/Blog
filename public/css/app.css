@@ -10805,6 +10805,10 @@ a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.copyright {
+  background-color: #1a252f;
+}
+
 @media print {
   *,
   *::before,

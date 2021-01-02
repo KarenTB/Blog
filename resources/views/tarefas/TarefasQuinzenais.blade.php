@@ -2,8 +2,9 @@
 
 
 @section('content')
-
-
+<div class="mt-1 mb-2 border-bottom">
+    <h2 class="ml-2">Tarefas Quinzenais</h2>
+</div>
 <form action="{{ route('create_quinzenais') }}" method="post">
     <div class="container">
         <div class="box">

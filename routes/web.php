@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\TarefasDiariasController;
 use App\Http\Controllers\TarefasMensaisController;
 use App\Http\Controllers\TarefasQuinzenaisController;
+use App\Http\Controllers\TarefasSemanaisController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,10 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/sobre', function () {
+    return view('layouts.Sobre');
+});
 
 Auth::routes();
 
@@ -46,11 +52,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/relatorio', function () {
         return view('tarefas.relatorio');
     });
-
-    Route::get('/Sobre', function () {
-        return view('layouts.Sobre');
-    });
-
 
     //Rotas de cadastros das informações
     Route::post('/create_tarefas_quinzenais', [TarefasQuinzenaisController::class, 'store'])->name('create_quinzenais');

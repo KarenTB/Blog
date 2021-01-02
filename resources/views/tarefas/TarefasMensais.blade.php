@@ -3,6 +3,9 @@
 
 @section('content')
 <link rel="stylesheet" href="style.css">
+<div class="mt-1 mb-2 border-bottom">
+    <h2 class="ml-2">Tarefas Mensais</h2>
+</div>
 <div class="container">
     <div class="box">
         <div class="col-6">

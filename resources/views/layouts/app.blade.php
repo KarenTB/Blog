@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -60,10 +61,10 @@
                                 Tarefas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url('TarefasDiarias') }}">Diárias</a>
                                 <a class="dropdown-item" href="{{ url('TarefasSemanais') }}">Semanais</a>
                                 <a class="dropdown-item" href="{{ url('TarefasQuinzenais') }}">Quinzenais</a>
                                 <a class="dropdown-item" href="{{ url('TarefasMensais') }}">Mensais</a>
-                                <a class="dropdown-item" href="{{ url('TarefasDiarias') }}">Diarias</a>
                             </div>
                         </li>
                     </ul>

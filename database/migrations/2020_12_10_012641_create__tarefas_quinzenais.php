@@ -15,7 +15,7 @@ class CreateTarefasQuinzenais extends Migration
     {
         Schema::create('_tarefas_quinzenais', function (Blueprint $table) {
             $table->id();
-            $table->string('justificativa');
+            $table->string('justificativa')->nullable();
             $table->date('data');
             $table->boolean('combate_a_dengue')->nullable();
             $table->boolean('limpeza_dos_vidros')->nullable();

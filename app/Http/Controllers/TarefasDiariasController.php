@@ -13,8 +13,15 @@ class TarefasDiariasController extends Controller
         $tarefas = new TarefasDiarias();
         $data = $request->all();
         $data['data'] = DB::raw("CURDATE()");
-
-        $tarefas->create($data);
+        $data['aspirador'] = isset($data['aspirador']) && !empty($data['aspirador']) && $data['aspirador'] == 'on' ? 1 : 0;
+        $data['vasos'] = isset($data['vasos']) && !empty($data['vasos']) && $data['vasos'] == 'on' ? 1 : 0;
+        $data['limpar_guinches'] = isset($data['limpar_guinches']) && !empty($data['limpar_guinches']) && $data['limpar_guinches'] == 'on' ? 1 : 0;
+        $data['lixo'] = isset($data['lixo']) && !empty($data['lixo']) && $data['lixo'] == 'on' ? 1 : 0;
+        $data['terminais'] = isset($data['terminais']) && !empty($data['terminais']) && $data['terminais'] == 'on' ? 1 : 0;
+        $data['ambiente_organizado'] = isset($data['ambiente_organizado']) && !empty($data['ambiente_organizado']) && $data['ambiente_organizado'] == 'on' ? 1 : 0;
+        $data['varrer'] = isset($data['varrer']) && !empty($data['varrer']) && $data['varrer'] == 'on' ? 1 : 0;
+        $data['lavar_lixeiras'] = isset($data['lavar_lixeiras']) && !empty($data['lavar_lixeiras']) && $data['lavar_lixeiras'] == 'on' ? 1 : 0;
+        $data['lavar_pias'] = isset($data['lavar_pias']) && !empty($data['lavar_pias']) && $data['lavar_pias'] == 'on' ? 1 : 0;
 
         //Verificando se existe tarefa não mascadas
         if ((empty($data['aspirador']) || empty($data['vasos']) 

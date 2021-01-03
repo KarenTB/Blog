@@ -13,6 +13,11 @@ class TarefasMensaisController extends Controller
         $tarefas = new TarefasMensais();
         $data = $request->all();
         $data['data'] = DB::raw("CURDATE()");
+        $data['luminarias'] = isset($data['luminarias']) && !empty($data['luminarias']) && $data['luminarias'] == 'on' ? 1 : 0;
+        $data['estofados'] = isset($data['estofados']) && !empty($data['estofados']) && $data['estofados'] == 'on' ? 1 : 0;
+        $data['placas'] = isset($data['placas']) && !empty($data['placas']) && $data['placas'] == 'on' ? 1 : 0;
+        $data['pisos'] = isset($data['pisos']) && !empty($data['pisos']) && $data['pisos'] == 'on' ? 1 : 0;
+        $data['superficies'] = isset($data['superficies']) && !empty($data['superficies']) && $data['superficies'] == 'on' ? 1 : 0;
 
         //Verificando se existe tarefa não mascadas
         if ((empty($data['luminarias']) || empty($data['estofados']) || empty($data['placas']) || empty($data['pisos'])

@@ -146,7 +146,7 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/diarias.jpg') }}">
                         <div class="card-block">
-                            <h4 class="card-title mt-3">Tarefas Diarias</h4>
+                            <h4 class="card-title mt-3">Tarefas Diárias</h4>
                         </div>
                         <div class="card-footer">
                             <a class="btn btn-primary float-right btn-sm" href="{{ url('TarefasDiarias') }}">Acessar</a>

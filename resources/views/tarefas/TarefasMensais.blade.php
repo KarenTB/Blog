@@ -7,68 +7,83 @@
     <h2 class="ml-2">Tarefas Mensais</h2>
 </div>
 <div class="container">
-    <div class="box">
-        <div class="col-6">
-            <form action="{{ route('create_mensais') }}" method="post">
-                @csrf
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <h1>Marque as Tarefas Realizadas</h1>
+        </div>
+        <form action="{{ route('create_mensais') }}" method="post">
+            @csrf
 
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ session('error') }}</strong>
+            @if(session('error'))
+                <div class="col-md-12 text-center alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ session('error') }}</strong>
+                </div>
+            @endif
+            @if(session('success'))
+                <div class="col-md-12 text-center alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ session('success') }}</strong>
+                </div>
+            @endif
+
+            <div class="col-md-12 text-center">
+                <div class="form-group funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="luminarias" id="checkbox1" />
+                        <label for="checkbox1">Limpar os globos de luz e luminárias</label>
                     </div>
-                @endif
-                @if(session('success'))
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ session('success') }}</strong>
+                </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <div class="form-group funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="estofados" id="checkbox2" />
+                        <label for="checkbox2">Limpar sofás e poltronas utilizando produtos apropriados</label>
                     </div>
-                @endif
-
-                <h1>Marque as Tarefas Realizadas</h1>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="luminarias">
-                    <label class="form-check-label" for="defaultCheck1">
-                        Limpar os globos de luz e luminárias
-                    </label>
                 </div>
+            </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck2" name="estofados">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Limpar sofás e poltronas utilizando produtos apropriados
-                    </label>
+            <div class="col-md-12 text-center">
+                <div class="form-group funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="placas" id="checkbox3" />
+                        <label for="checkbox3">Limpar as placas de aviso</label>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck2" name="placas">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Limpar as placas de aviso
-                    </label>
+            <div class="col-md-12 text-center">
+                <div class="form-group funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="pisos" id="checkbox4" />
+                        <label for="checkbox4">Clarear os pisos laváveis</label>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck2" name="pisos">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Clarear os pisos laváveis
-                    </label>
+            <div class="col-md-12 text-center">
+                <div class="form-group funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="superficies" id="checkbox5" />
+                        <label for="checkbox5">Limpar tetos, portas, paredes e rodapés</label>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck2" name="superficies">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Limpar tetos, portas, paredes e rodapés
-                    </label>
-                </div><br>
-
+            <div class="col-md-12 text-center">
                 <div class="form-group">
                     <label for="story">Justifique as tarefas não realizadas</label>
-                    <textarea id="story" name="justificativa" rows="3" cols="40">
-                            </textarea>
+                    <textarea id="story" class="form-control" name="justificativa" rows="3" cols="40">
+                </textarea>
                 </div>
-                <input type="submit" class="btn btn-primary btn-lg" value="Enviar" />
-            </form>
-        </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar" />
+            </div>
+        </form>
     </div>
 </div>
 @endsection

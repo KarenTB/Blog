@@ -15,6 +15,7 @@ class CreateTarefasDiarias extends Migration
     {
         Schema::create('_tarefas_diarias', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table-> string ( 'justificativa')->nullable();
             $table->date('data');
             $table->boolean('aspirador')->nullable()->default(0);
@@ -27,7 +28,11 @@ class CreateTarefasDiarias extends Migration
             $table->boolean('lavar_lixeiras')->nullable()->default(0);
             $table->boolean('lavar_pias')->nullable()->default(0);
             $table->timestamps();
-
+            $table->foreign('user_id')
+                ->on('users')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

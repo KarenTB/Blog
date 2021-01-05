@@ -12,6 +12,7 @@ class TarefasDiariasController extends Controller
     {
         $tarefas = new TarefasDiarias();
         $data = $request->all();
+        $data['user_id'] = auth()->id();
         $data['data'] = DB::raw("CURDATE()");
         $data['aspirador'] = isset($data['aspirador']) && !empty($data['aspirador']) && $data['aspirador'] == 'on' ? 1 : 0;
         $data['vasos'] = isset($data['vasos']) && !empty($data['vasos']) && $data['vasos'] == 'on' ? 1 : 0;

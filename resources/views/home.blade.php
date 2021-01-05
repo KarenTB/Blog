@@ -141,8 +141,8 @@
                 </div>
             </div>
         @else
-            <div class="row" style="background-color: #F2F2F2">
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 mb-4">
+            <div class="row justify-content-center" style="background-color: #F2F2F2">
+                <div class="col-sm-6 col-md-5 col-lg-5 mt-3 mb-3">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/diarias.jpg') }}">
                         <div class="card-block">
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 mb-2">
+                <div class="col-sm-6 col-md-5 col-lg-5 mt-4 mb-4">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/samanal.png') }}">
                         <div class="card-block">
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 mb-2">
+                <div class="col-sm-6 col-md-5 col-lg-5 mt-4 mb-4">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/quinzenal.jpg') }}">
                         <div class="card-block">
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 mb-2">
+                <div class="col-sm-6 col-md-5 col-lg-5 mt-4 mb-2">
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('images/mensal.png') }}">
                         <div class="card-block">
@@ -183,17 +183,6 @@
                         </div>
                         <div class="card-footer">
                             <a class="btn btn-primary float-right btn-sm" href="{{ url('TarefasMensais') }}">Acessar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 mt-4 mb-2">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('images/report.png') }}">
-                        <div class="card-block">
-                            <h4 class="card-title mt-3">Relatórios</h4>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-primary float-right btn-sm" href="#">Acessar</a>
                         </div>
                     </div>
                 </div>

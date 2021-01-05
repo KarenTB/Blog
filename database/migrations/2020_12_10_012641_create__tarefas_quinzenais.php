@@ -15,6 +15,7 @@ class CreateTarefasQuinzenais extends Migration
     {
         Schema::create('_tarefas_quinzenais', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('justificativa')->nullable();
             $table->date('data');
             $table->boolean('combate_a_dengue')->nullable();
@@ -24,7 +25,11 @@ class CreateTarefasQuinzenais extends Migration
             $table->boolean('revisao')->nullable();
             $table->boolean('capachos')->nullable();
             $table->timestamps();
-
+            $table->foreign('user_id')
+                ->on('users')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

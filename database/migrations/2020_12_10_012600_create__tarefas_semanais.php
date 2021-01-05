@@ -15,6 +15,7 @@ class CreateTarefasSemanais extends Migration
     {
         Schema::create('_tarefas_semanais', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('justificativa')->nullable();
             $table->date('data');
             $table->boolean('lavar')->nullable();
@@ -23,6 +24,11 @@ class CreateTarefasSemanais extends Migration
             $table->boolean('limpar_tapetes')->nullable();
             $table->boolean('moveis')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')
+                ->on('users')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

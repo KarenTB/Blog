@@ -15,6 +15,7 @@ class CreateTarefasMensais extends Migration
     {
         Schema::create('_tarefas_mensais', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('justificativa')->nullable();
             $table ->date('data');
             $table->boolean('luminarias')->nullable();
@@ -23,6 +24,11 @@ class CreateTarefasMensais extends Migration
             $table->boolean('pisos')->nullable();
             $table->boolean('superficies')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')
+                ->on('users')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

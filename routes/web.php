@@ -4,6 +4,7 @@ use App\Http\Controllers\TarefasDiariasController;
 use App\Http\Controllers\TarefasMensaisController;
 use App\Http\Controllers\TarefasQuinzenaisController;
 use App\Http\Controllers\TarefasSemanaisController;
+use App\Http\Controllers\ReportTarefasDiariasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -49,8 +50,9 @@ Route::middleware(['auth'])->group(function () {
         return view('tarefas.TarefasSemanais');
     });
 
-    Route::get('/relatorio', function () {
-        return view('tarefas.relatorio');
+    Route::get('/tarefasDiariasReport', function (){
+        return view('reports.diarias')
+            ->with('tarefas', []);
     });
 
     //Rotas de cadastros das informações
@@ -59,5 +61,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/create_tarefas_diarias', [TarefasDiariasController::class, 'store'])->name('create_diarias');
     Route::post('/create_tarefas_semanais', [TarefasSemanaisController::class, 'store'])->name('create_semanais');
 
-
+    //Rotas dos Relatórios
+    Route::get('/reportDiarias', [ReportTarefasDiariasController::class, 'index'])->name('get_report_diarias');
 });

@@ -60,17 +60,29 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tarefas
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('TarefasDiarias') }}">Diárias</a>
-                                <a class="dropdown-item" href="{{ url('TarefasSemanais') }}">Semanais</a>
-                                <a class="dropdown-item" href="{{ url('TarefasQuinzenais') }}">Quinzenais</a>
-                                <a class="dropdown-item" href="{{ url('TarefasMensais') }}">Mensais</a>
-                            </div>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('TarefasDiarias') }}">Diárias</a>
+                                    <a class="dropdown-item" href="{{ url('TarefasSemanais') }}">Semanais</a>
+                                    <a class="dropdown-item" href="{{ url('TarefasQuinzenais') }}">Quinzenais</a>
+                                    <a class="dropdown-item" href="{{ url('TarefasMensais') }}">Mensais</a>
+                                </div>
                         </li>
                     </ul>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Relatorios</a>
-                    </li>
+                    @if(auth('web')->user()->permission == 'advanced')
+                        <ul class="navbar-nav navbar-right">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Relatorios
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('tarefasDiariasReport') }}">Tarefas Diárias</a>
+                                    <a class="dropdown-item" href="#">Tarefas Semanais</a>
+                                    <a class="dropdown-item" href="#">Tarefas Quinzenais</a>
+                                    <a class="dropdown-item" href="#">Tarefas Mensais</a>
+                                </div>
+                            </li>
+                        </ul>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('sobre') }}">Sobre</a>
                     </li>

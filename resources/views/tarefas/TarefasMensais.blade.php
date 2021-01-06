@@ -81,7 +81,7 @@
             </div>
 
             <div class="col-md-12 text-center">
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar" />
+                <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-save"></i> Enviar</button>
             </div>
         </form>
     </div>

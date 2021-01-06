@@ -5,6 +5,7 @@ use App\Http\Controllers\TarefasMensaisController;
 use App\Http\Controllers\TarefasQuinzenaisController;
 use App\Http\Controllers\TarefasSemanaisController;
 use App\Http\Controllers\ReportTarefasDiariasController;
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,10 @@ Route::middleware(['auth'])->group(function () {
         return view('reports.diarias')
             ->with('tarefas', []);
     });
+
+    //Rotas de Usuários
+    Route::resource('usuarios', UsuariosController::class);
+    Route::get('situation_user/{usuario}', [UsuariosController::class, 'toggleSituation'])->name('usuarios.situation');
 
     //Rotas de cadastros das informações
     Route::post('/create_tarefas_quinzenais', [TarefasQuinzenaisController::class, 'store'])->name('create_quinzenais');

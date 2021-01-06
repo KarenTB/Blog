@@ -82,6 +82,9 @@
                                 </div>
                             </li>
                         </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('usuarios') }}">Usuários</a>
+                        </li>
                     @endif
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('sobre') }}">Sobre</a>

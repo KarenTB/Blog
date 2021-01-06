@@ -25,7 +25,9 @@
                 <input class="form-control" type="date" name="dt_fim" value="{{ old('dt_fim') }}" id="example-date-input">
             </div>
             <div class="col-md-2 mt-2 form-group">
-                <input type="submit" value="Filtrar" class="btn btn-primary form-control" />
+                <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <i class="fas fa-filter"></i> Filtrar
+                </button>
             </div>
         </div>
     </form>
@@ -55,15 +57,61 @@
                         <th scope="row">{{ $tarefa->id }}</th>
                         <td>{{ $tarefa->usuario }}</td>
                         <td>{{ $tarefa->data }}</td>
-                        <td>{{ $tarefa->aspirador == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->vasos == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->limpar_guinches == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->lixo == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->terminais == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->ambiente_organizado == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->varrer == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->lavar_lixeiras == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
-                        <td>{{ $tarefa->lavar_pias == 1 ? 'Realizado(a)' : 'Não Realiazado(a)' }}</td>
+                        <td>
+                            @if($tarefa->aspirador == 1)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($tarefa->vasos == 1)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->limpar_guinches)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->lixo)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->terminais)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->ambiente_organizado)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->varrer)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->lavar_lixeiras)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
+                        <td>
+                            @if($tarefa->lavar_pias)
+                                <span class="badge badge-success">Realizada</span>
+                            @else
+                                <span class="badge badge-danger">Não Realizada</span>
+                            @endif
                         <td style="white-space: pre-wrap">{{ $tarefa->justificativa }}</td>
                     </tr>
                 @endforeach

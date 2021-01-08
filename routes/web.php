@@ -6,6 +6,9 @@ use App\Http\Controllers\TarefasQuinzenaisController;
 use App\Http\Controllers\TarefasSemanaisController;
 use App\Http\Controllers\ReportTarefasDiariasController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\ReportTarefasSemanaisController;
+use App\Http\Controllers\ReportTarefasQuinzenaisController;
+use App\Http\Controllers\ReportTarefasMensaisController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +59,21 @@ Route::middleware(['auth'])->group(function () {
             ->with('tarefas', []);
     });
 
+    Route::get('/tarefasSemanaisReport', function (){
+        return view('reports.semanais')
+            ->with('tarefas', []);
+    });
+
+    Route::get('/tarefasQuinzenaisReport', function (){
+        return view('reports.quinzenais')
+            ->with('tarefas', []);
+    });
+
+    Route::get('/tarefasMensaisReport', function (){
+        return view('reports.mensais')
+            ->with('tarefas', []);
+    });
+
     //Rotas de Usuários
     Route::resource('usuarios', UsuariosController::class);
     Route::get('situation_user/{usuario}', [UsuariosController::class, 'toggleSituation'])->name('usuarios.situation');
@@ -68,4 +86,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Rotas dos Relatórios
     Route::get('/reportDiarias', [ReportTarefasDiariasController::class, 'index'])->name('get_report_diarias');
+    Route::get('/reportSemanais', [ReportTarefasSemanaisController::class, 'index'])->name('get_report_semanais');
+    Route::get('/reportQuinzenais', [ReportTarefasQuinzenaisController::class, 'index'])->name('get_report_quinzenais');
+    Route::get('/reportMensais', [ReportTarefasMensaisController::class, 'index'])->name('get_report_mensais');
 });

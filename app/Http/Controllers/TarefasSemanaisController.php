@@ -12,6 +12,7 @@ class TarefasSemanaisController extends Controller
     {
         $tarefas = new TarefasSemanais();
         $data = $request->all();
+        $data['user_id'] = auth('web')->id();
         $data['data'] = DB::raw("CURDATE()");
         $data['lavar'] = isset($data['lavar']) && !empty($data['lavar']) && $data['lavar'] == 'on' ? 1 : 0;
         $data['limpar_poeira'] = isset($data['limpar_poeira']) && !empty($data['limpar_poeira']) && $data['limpar_poeira'] == 'on' ? 1 : 0;

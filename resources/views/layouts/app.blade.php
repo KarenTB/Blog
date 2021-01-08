@@ -76,9 +76,9 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('tarefasDiariasReport') }}">Tarefas Diárias</a>
-                                    <a class="dropdown-item" href="#">Tarefas Semanais</a>
-                                    <a class="dropdown-item" href="#">Tarefas Quinzenais</a>
-                                    <a class="dropdown-item" href="#">Tarefas Mensais</a>
+                                    <a class="dropdown-item" href="{{ url('tarefasSemanaisReport') }}">Tarefas Semanais</a>
+                                    <a class="dropdown-item" href="{{ url('tarefasQuinzenaisReport') }}">Tarefas Quinzenais</a>
+                                    <a class="dropdown-item" href="{{ url('tarefasMensaisReport') }}">Tarefas Mensais</a>
                                 </div>
                             </li>
                         </ul>

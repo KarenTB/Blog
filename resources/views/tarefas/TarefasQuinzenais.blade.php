@@ -83,8 +83,7 @@
             <div class="col-md-12 text-center">
                 <div class="form-group">
                     <label for="story">Justifique as tarefas não realizadas</label>
-                    <textarea id="story" class="form-control" name="justificativa" rows="3" cols="40">
-                </textarea>
+                    <textarea id="story" class="form-control" name="justificativa" rows="3" cols="40"></textarea>
                 </div>
             </div>
 

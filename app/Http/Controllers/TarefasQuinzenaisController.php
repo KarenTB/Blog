@@ -12,6 +12,7 @@ class TarefasQuinzenaisController extends Controller
     {
         $tarefas = new TarefasQuinzenais();
         $data = $request->all();
+        $data['user_id'] = auth('web')->id();
         $data['data'] = DB::raw("CURDATE()");
         $data['combate_a_dengue'] = isset($data['combate_a_dengue']) && !empty($data['combate_a_dengue']) && $data['combate_a_dengue'] == 'on' ? 1 : 0;
         $data['limpeza_dos_vidros'] = isset($data['limpeza_dos_vidros']) && !empty($data['limpeza_dos_vidros']) && $data['limpeza_dos_vidros'] == 'on' ? 1 : 0;

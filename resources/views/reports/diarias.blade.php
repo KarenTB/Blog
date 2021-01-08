@@ -70,48 +70,56 @@
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->limpar_guinches)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->lixo)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->terminais)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->ambiente_organizado)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->varrer)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->lavar_lixeiras)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td>
                             @if($tarefa->lavar_pias)
                                 <span class="badge badge-success">Realizada</span>
                             @else
                                 <span class="badge badge-danger">Não Realizada</span>
                             @endif
+                        </td>
                         <td style="white-space: pre-wrap">{{ $tarefa->justificativa }}</td>
                     </tr>
                 @endforeach

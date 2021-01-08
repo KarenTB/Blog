@@ -12,6 +12,7 @@ class TarefasMensaisController extends Controller
     {
         $tarefas = new TarefasMensais();
         $data = $request->all();
+        $data['user_id'] = auth('web')->id();
         $data['data'] = DB::raw("CURDATE()");
         $data['luminarias'] = isset($data['luminarias']) && !empty($data['luminarias']) && $data['luminarias'] == 'on' ? 1 : 0;
         $data['estofados'] = isset($data['estofados']) && !empty($data['estofados']) && $data['estofados'] == 'on' ? 1 : 0;
